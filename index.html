@@ -19,19 +19,21 @@
 		#gfg {
 			font-size: 100px;
 		}
-		gfg {
-			font-size: 100px;
-		}
-		copyButton {
-  			background-color: #242424;
- 			border: none;
+		.copyButton {
+			background-color: #242424;
+			border: none;
 			color: white;
-  			padding: 15px 32px;
-  			text-align: center;
-  			text-decoration: none;
-  			display: inline-block;
-  			font-size: 16px;
+			padding: 15px 32px;
+			text-align: center;
+			text-decoration: none;
+			display: inline-block;
+			font-size: 16px;
 			border-radius: 8px;
+			transition: all 0.3s ease;
+		}
+		.copyButton:hover {
+			transform: scale(1.05);
+			background-color: #333333;
 		}
 	</style>
 
@@ -72,8 +74,8 @@
 		<p></p>
 		<p></p>
 		<p>Developer notes and updates:</p>
-		<p>- Update 1.2 release: additions - copy IPaddress button and CSS. Available on Github</p>
-		<button id="copyButton">Copy IP Address</button>
+		<p>- Update 1.2 release: additions - copy IP address button and CSS. Available on Github</p>
+		<button class="copyButton" id="copyButton">Copy IP Address</button>
 	</center>
 </body>
 

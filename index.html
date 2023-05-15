@@ -4,62 +4,65 @@
 <head>
 	<title>Getting Clients IP</title>
 	<style>
-	p, h1 {
-		color: white;
-	}
-	h3 {
-		color: white;
-	}
-	body {
-		background-color: #2b2b2b;
-	}
-	center {
-		background-color: #2b2b2b;
-	}
-	#gfg {
-		font-size: 100px;
-	}
-	gfg {
-		font-size: 100px;
-	}
+		p, h1 {
+			color: white;
+		}
+		h3 {
+			color: white;
+		}
+		body {
+			background-color: #2b2b2b;
+		}
+		center {
+			background-color: #2b2b2b;
+		}
+		#gfg {
+			font-size: 100px;
+		}
+		gfg {
+			font-size: 100px;
+		}
 	</style>
 
-	<script src=
-"https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js">
-	</script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 	
 	<script>
-	
-	/* Add "https://api.ipify.org?format=json" statement
-			this will communicate with the ipify servers in
-			order to retrieve the IP address $.getJSON will
-			load JSON-encoded data from the server using a
-			GET HTTP request */
-				
-	$.getJSON("https://api.ipify.org?format=json", function(data) {
-		
-		// Setting text of element P with id gfg
-		$("#gfg").html(data.ip);
-	})
+		$(document).ready(function() {
+			$.getJSON("https://api.ipify.org?format=json", function(data) {
+				$("#gfg").html(data.ip);
+			});
+			
+			$("#copyButton").click(function() {
+				var ipAddress = $("#gfg").html();
+				navigator.clipboard.writeText(ipAddress)
+					.then(function() {
+						alert("IP address copied to clipboard!");
+					})
+					.catch(function(error) {
+						console.error("Failed to copy IP address: ", error);
+					});
+			});
+		});
 	</script>
 </head>
 
 <body>
 	<center>
-		<h1>Randspoon.co.uk (server) </h1>
+		<h1>Randspoon.co.uk (server)</h1>
 		<h3>Public IP Address of user is:</h3>
 		<p id="gfg"></p>
-		<p> </p>
-		<p> </p>
-		<p> </p>
-		<p> </p>
-		<p> </p>
-		<p> </p>
-		<p> </p>
-		<p> </p>
-		<p>Developer notes: </p>
-		<p>Copying public ip address coming soon in update 1.2 -Dev</p>
-
+		<p></p>
+		<p></p>
+		<p></p>
+		<p></p>
+		<p></p>
+		<p></p>
+		<p></p>
+		<p></p>
+		<p></p>
+		<p>Developer notes and updates:</p>
+		<p>- Update 1.2 release: additions - copy IPaddress button and CSS. Available on Github</p>
+		<button id="copyButton">Copy IP Address</button>
 	</center>
 </body>
 

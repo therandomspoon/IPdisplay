@@ -41,16 +41,8 @@
 	
 	<script>
 		$(document).ready(function() {
-			var ipCounter = localStorage.getItem('ipCounter');
-			if (!ipCounter) {
-				ipCounter = 0;
-			}
-			
 			$.getJSON("https://api.ipify.org?format=json", function(data) {
 				$("#gfg").html(data.ip);
-				ipCounter++;
-				$("#ipCounter").html(ipCounter);
-				localStorage.setItem('ipCounter', ipCounter);
 			});
 			
 			$("#copyButton").click(function() {
@@ -84,7 +76,7 @@
 		<p>Developer notes and updates:</p>
 		<p>- All updates and details available on Github. All future updates will be put on here.</p>
 		<button class="copyButton" id="copyButton">Copy IP Address</button>
-		<p>IPs displayed: <span id="ipCounter">0</span></p>
+		<p>IPs displayed: <span id="ipCounter">1</span></p>
 	</center>
 </body>
 
